@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Tus metadatos y enlaces a estilos y scripts van aquí -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIENDA ORGANICA</title>
+
+
+    <!-- Enlaces a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+    <!-- SweetAlert CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img src="image/logo-caliope-removebg-preview.png" alt="Logo" class="scale-up-center"></a>
+        <!-- Fin del logo -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-leaf"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="TIENDA ORGANICA.HTML">TIENDA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Verduras.html">Verduras</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Frutas.html">Frutas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Huevos.html">Huevos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Bolsones.html">Bolsones</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Ensaladas.html">Ensaladas</a>
+                </li>
+                
+              
+                <li class="nav-item">
+                    <a class="nav-link" href="https://instagram.com/mundoensepia?igshid=YTQwZjQ0NmI0OA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.tiktok.com/@TuUsuarioDeTikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://wa.me/1126764951" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </li>
+
+                <div id="cart" class="text-center">
+                    <h4>
+                        <img src="image/CARRITO_VERDURAS_BLANCO_Y_NEGRO-removebg-preview.png" alt="Logo del Carrito" width="70" height="70">
+                        <i class="fas fa-shopping-cart"></i> 
+                    </h4>
+                    <ul id="cart-items"></ul>
+                    <p>Total: $<span id="cart-total">0.00</span></p>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+</head>
+
+<body>
+    <div class="container mt-4">
+        <!-- Sección de productos -->
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="verduras/apio.jpg" alt="Apio 300gr." class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Apio 300gr.</strong></h5>
+                        <p class="card-text">Precio: $1.500</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Apio 300gr.', 1500)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            
+    
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="verduras/batata.jpg" alt="Batata 1 kilo" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Batata 1 kilo</strong></h5>
+                        <p class="card-text">Precio: $1.350</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Batata 1 kilo.', 1350)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="verduras/berenjena.jpg" alt="Berenjenas 1 kilo" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Berenjenas 1 kilo</strong></h5>
+                        <p class="card-text">Precio: $2.100</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Berenjenas 1 kilo', 2100)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mt-4">
+        <!-- Sección de productos -->
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="verduras/boniato.webp" alt="Boniato 1 kilo" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Boniato 1 kilo</strong></h5>
+                        <p class="card-text">Precio: $1.800</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Bonitato 1 kilo.', 1800)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="verduras/brocoli.webp" alt="Brocoli 1/2 kilo" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Brocoli 1/2 kilo</strong></h5>
+                        <p class="card-text">Precio: $2.300</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Brocoli 1/2 kilo', 2300)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="verduras/cebolla de verdeo.jpg" alt="Verdeo 350gr." class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Verdeo 350gr.</strong></h5>
+                        <p class="card-text">Precio: $1.800</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Verdeo 350gr.', 1800)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container mt-4">
+        <!-- Sección de productos -->
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="verduras/cebolla.jpg" alt="Cebolla 1 kilo" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Cebolla 1 kilo</strong></h5>
+                        <p class="card-text">Precio: $1.500</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Cebolla 1 kilo', 1500)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="verduras/choclo.jpg" alt="Choclo 1/2 kilo" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Choclo 1/2 kilo</strong></h5>
+                        <p class="card-text">Precio: $1.800</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Choclo 1/2 kilo', 1800)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="verduras/espinaca.jpg" alt="Espinaca 1/2 kilo" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Espinaca 1/2 Kilo</strong></h5>
+                        <p class="card-text">Precio: $1.900</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Espinaca 1/2 kilo', 1900)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <!-- Sección de productos -->
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="verduras/kale verdura.webp" alt="kale 1/2 kilo" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>kale 1/2 kilo</strong></h5>
+                        <p class="card-text">Precio: $1.500</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('kale 1/2 kilo', 1500)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="verduras/lechuga capucchina.webp" alt="Lechuga Capucchina 1/2 kilo" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Lechuga Capucchina 1/2 kilo</strong></h5>
+                        <p class="card-text">Precio: $1.600</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Lechuga Capucchina 1/2 kilo', 1600)">Agregar al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="verduras/morron rojo verdura.webp" alt="Morron 1/2 kilo" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title"><strong>Morron 1/2 kilo</strong></h5>
+                        <p class="card-text">Precio: $1.900</p>
+                        <button class="btn btn-success" onclick="agregarAlCarrito('Morron 1/2 kilo', 1900)">Agregar al Carrito</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Botón para ver el carrito -->
+        <div class="text-center">
+            <a href="#" class="btn btn-success" onclick="actualizarCarrito()">Ver Carrito</a>
+        </div>
+    </div>
+
+        
+       
+    <button class="btn btn-success" onclick="finalizarCompra()">Finalizar Compra</button>
+
+    <BR></BR>
+    <BR></BR>
+
+    <footer class="bg-success text-white text-center py-2 fixed-bottom">
+        <p>&copy; 2023 Asesoramiento Gastronómico</p>
+
+    </footer>
+
+
+    <script src="./js/script.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Tus metadatos y enlaces a estilos y scripts van aquí -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIENDA ORGANICA</title>
+
+    <!-- Enlaces a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Tu script y otros enlaces van aquí -->
+    <script async src="./js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img src="image/logo-caliope-removebg-preview.png" alt="Logo" class="scale-up-center"></a>
+        <!-- Fin del logo -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-leaf"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="TIENDA ORGANICA.HTML">TIENDA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Verduras.html">Verduras</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Frutas.html">Frutas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Huevos.html">Huevos</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Bolsones.html">Bolsones</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Ensaladas.html">Ensaladas</a>
+                </li>
+                
+              
+                <li class="nav-item">
+                    <a class="nav-link" href="https://instagram.com/mundoensepia?igshid=YTQwZjQ0NmI0OA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.tiktok.com/@TuUsuarioDeTikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://wa.me/1126764951" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </li>
+
+                <div id="cart" class="text-center">
+                    <h4>
+                        <img src="image/CARRITO_VERDURAS_BLANCO_Y_NEGRO-removebg-preview.png" alt="Logo del Carrito" width="70" height="70">
+                        <i class="fas fa-shopping-cart"></i> 
+                    </h4>
+                    <ul id="cart-items"></ul>
+                    <p>Total: $<span id="cart-total">0.00</span></p>
+                </div>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+    <!-- Agrega un nuevo script para el carrito de compras -->
+    <script>
+        // Define una variable para almacenar los elementos en el carrito
+        var carrito = [];
+
+        // Función para agregar un elemento al carrito
+        function agregarAlCarrito(nombre, precio) {
+            var item = { nombre: nombre, precio: precio };
+            carrito.push(item);
+            actualizarCarrito();
+        }
+
+        // Función para actualizar la visualización del carrito
+        function actualizarCarrito() {
+            // Implementa la lógica para mostrar los elementos en el carrito
+            // Puedes actualizar un elemento en el DOM o abrir un modal, según tus necesidades
+            console.log(carrito);
+        }
+    </script>
+</head>
+
+<body>
+
+
+    <!-- Contenido principal -->
+<div class="container mt-4">
+    <!-- Sección de productos -->
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <img src="ensaladas/ensalada americana.webp" alt="Americana" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Americana</strong></h5>
+                    <p class="card-text">Precio: $3.500</p>
+                    <button class="btn btn-success" onclick="agregarAlCarrito('Bolsa verduras de estación', 8000)">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <img src="ensaladas/ensalada iberica.webp" alt="iberica" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Iberica</strong></h5>
+                    <p class="card-text">Precio: $3.500</p>
+                    <button class="btn btn-success" onclick="agregarAlCarrito('Bolson Agroecológico', 8000)">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <!-- Sección de productos -->
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <img src="ensaladas/ensalada mediterranea.webp" alt="Mediterranea" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Mediterranea</strong></h5>
+                    <p class="card-text">Precio: $3.500</p>
+                    <button class="btn btn-success" onclick="agregarAlCarrito('Bolsa verduras de estación', 8000)">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <img src="ensaladas/ensalada ranch.webp" alt="ranch" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title"><strong>Ranch</strong></h5>
+                    <p class="card-text">Precio: $3.500</p>
+                    <button class="btn btn-success" onclick="agregarAlCarrito('Bolson Agroecológico', 8000)">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <!-- Botón para ver el carrito -->
+        <div class="text-center">
+            <a href="#" class="btn btn-success" onclick="actualizarCarrito()">Ver Carrito</a>
+        </div>
+    </div>
+
+    <button class="btn btn-success" onclick="finalizarCompra()">Finalizar Compra</button>
+
+    <BR></BR>
+    <BR></BR>
+
+    <footer class="bg-success text-white text-center py-2 fixed-bottom">
+        <p>&copy; 2023 Asesoramiento Gastronómico</p>
+    </footer>
+
+
+    <script src="./js/script.js" defer></script>
+    
+</body>
+</html>

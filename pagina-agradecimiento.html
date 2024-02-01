@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agradecimiento</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; 
+        }
+
+        .container {
+            background-color: #ffffff; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+            margin-top: 20px; 
+            padding: 20px; 
+        }
+
+        h1 {
+            color: #28a745; 
+        }
+
+        ul {
+            list-style: none; /* Eliminar viñetas de la lista */
+            padding: 0; /* Eliminar relleno interno de la lista */
+        }
+
+        li {
+            margin-bottom: 10px; /* Espacio entre elementos de la lista */
+        }
+
+        #total-agradecimiento {
+            font-weight: bold; /* Texto en negrita */
+            color: #28a745; /* Color del texto verde */
+            font-size: 1.2em; /* Tamaño de fuente aumentado para resaltar */
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <!-- ... (código del navbar) ... -->
+        </div>
+    </nav>
+
+    <section class="container my-4 bg-light p-4">
+        <h2 class="text-center mb-4">¡Gracias por tu compra!</h2>
+        <p class="text-justify">A continuación, el detalle de tu compra:</p>
+        <ul id="carrito-agradecimiento"></ul>
+        <p id="total-agradecimiento"></p>
+    </section>
+
+    <footer class="bg-success text-white text-center py-2 fixed-bottom">
+        <p>&copy; 2023 Asesoramiento Gastronómico</p>
+    </footer>
+
+    <!-- Tu script.js -->
+    <script>
+        // Recuperar el carrito del localStorage
+        const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+        // Función para mostrar el carrito en la nueva página
+        function mostrarCarritoEnAgradecimiento() {
+            const carritoElemento = document.getElementById('carrito-agradecimiento');
+            let total = 0;
+
+            carrito.forEach(producto => {
+                // Crear elementos HTML para mostrar cada producto
+                const productoElemento = document.createElement('li');
+                productoElemento.textContent = `${producto.nombre} x${producto.cantidad} - $${(producto.precio * producto.cantidad).toFixed(2)}`;
+                carritoElemento.appendChild(productoElemento);
+
+                total += producto.precio * producto.cantidad;
+            });
+
+            // Mostrar el total con un formato más claro
+            document.getElementById('total-agradecimiento').textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        // Llamar a la función para mostrar el carrito al cargar la página
+        window.addEventListener('load', mostrarCarritoEnAgradecimiento);
+    </script>
+</body>
+</html>
