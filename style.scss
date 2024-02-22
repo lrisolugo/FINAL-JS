@@ -1,0 +1,119 @@
+// Variables
+$primary-color: #e0f58f;
+$secondary-color: #c0d1c1;
+$accent-color: white;
+$font-stack: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+@mixin reset-margin-padding {
+  margin: 0;
+  padding: 0;
+}
+
+.tracking-out-expand{-webkit-animation:tracking-out-expand .8s cubic-bezier(.25,.46,.45,.94) both;animation:tracking-out-expand .8s cubic-bezier(.25,.46,.45,.94) both}
+// Estilos
+
+.custom-background {
+    background-color: #089933;
+    margin: 20px;
+    width: 100%; 
+    max-width: 800px; 
+    padding: 100px; 
+    margin: 0 auto; 
+}
+
+
+@media (max-width: 768px) {
+    .custom-background {
+        padding: 40px; 
+    }
+}
+
+
+.logo {
+  max-width: 300px;
+  height: auto;
+}
+
+body {
+  font-family: $font-stack;
+  margin: 0;
+  padding: 0;
+  background-color: $primary-color;
+  color: #333;
+  @include reset-margin-padding;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; 
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; 
+  }
+  
+
+nav {
+  background-color: $secondary-color;
+  color: $accent-color;
+  padding: 15px 0;
+}
+
+.navbar-brand {
+  font-size: 24px;
+}
+
+.navbar-toggler-icon {
+  background-color: $accent-color;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  color: $accent-color;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.tracking-in-contract{animation:tracking-in-contract .8s cubic-bezier(.215,.61,.355,1.000) both}
+
+ @keyframes tracking-in-contract{0%{letter-spacing:1em;opacity:0}40%{opacity:.6}100%{letter-spacing:normal;opacity:1}}
+
+// Footer
+footer {
+  background-color: #3eda65;
+  color: $accent-color;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  @include reset-margin-padding;
+}
+
